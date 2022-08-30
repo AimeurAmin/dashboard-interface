@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<form action="" class="container">
+		<!-- QUESTIONS -->
+		<div class="question" id="question"></div>
+		
+		<!-- ANSWERS -->
+		<div class="answers" id="answers-container">
+			<!-- Les réponses seront ajouté ici par javascript -->
+		</div>
+
+		<!-- USER FORM -->
+		<div class="comment-section" id="comment-section">
+			<div class="title">Veuillez ajouter un commentaire</div>
+			<textarea name="comment" class="comment" id="comment" rows="10" placeholder="Commentaire..."></textarea>
+			<label for="domain" class="domain-label">Veuillez selectionné le domaine en question</label>
+			<div class="custom-select domain-select">
+				<select name="domain" id="domain">
+					<option>---</option>
+					<!-- <option value="volvo">Volvo</option> -->
+				</select>
+			</div>
+		</div>
+		<div class="user-form" id="user-form">
+			<div class="title">Identifiez vous</div>
+
+			<label for="first-name">Prénom</label>
+			<div class="input-container">
+				<input type="text" name="first-name" id="first-name" placeholder="Veuillez saisir votre prénom...">
+			</div>
+
+			<label for="last-name">Nom</label>
+			<div class="input-container">
+				<input type="text" name="last-name" id="last-name"placeholder="Veuillez saisir votre nom...">
+			</div>
+
+			<label for="phone">Numéro de téléphone</label>
+			<div class="input-container">
+				<input type="text" name="phone" id="phone" placeholder="Veuillez saisir votre numéro de téléphone..." value="+213 5" maxlength="14">
+			</div>
+
+			<label for="email">E-mail</label>
+			<div class="input-container">
+				<input type="text" name="email" id="email" placeholder="Veuillez saisir votre adresse mail..." >
+			</div>
+
+			<label for="city">Wilaya</label>
+			<div class="custom-select">
+				<select name="city" id="city">
+					<!-- <option value="volvo">Volvo</option> -->
+				</select>
+			</div>
+		</div>
+
+		<!-- ACTION BUTTONS -->
+		<div class="actions">
+			<div class="button previous" id="previous">Précédant</div>
+			<div class="button next" id="next">Suivant</div>
+			<div class="button submit" id="submit">Submit</div>
+		</div>
+	</form>
+	<div class="loading" id="loading">CLASSIFICATION ENCOURS ...</div>
+	<script src="./scripts.js"></script>
+</body>
+</html>

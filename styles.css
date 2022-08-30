@@ -1,0 +1,282 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+	font-family: inherit;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 18px;
+}
+
+.container .question {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 80px;
+    margin-top: 100px;
+}
+
+.container .answers {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.container .answers .answer {
+    margin-block: 5px;
+    border: 1px solid rgb(114, 114, 114);
+    border-radius: 10px;
+    padding-inline: 10px;
+    padding-block: 15px;
+    cursor: pointer;
+}
+
+.container .answers .answer:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.container .actions {
+    display: block;
+    width: 48%;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    margin-block-end: 7%;
+}
+
+.container .actions .button {
+    border-radius: 5px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    color: white;
+    min-width: 200px;
+    text-align: center;
+    cursor: pointer;
+    /* to not select text only */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.container .actions .button:hover {
+    opacity: 0.7;
+}
+
+.container .actions .button:active {
+  opacity: 0.9;
+}
+
+.container .actions .next {
+  background-color: #1eb41e;
+  float: right;
+}
+
+.container .actions .previous {
+  background-color: #52525f;
+  float: left;
+  display: none;
+}
+
+.container .actions .submit {
+  background-color: #1e2db4;
+  float: right;
+  display: none;
+}
+
+.container .comment-section {
+  width: 50%;
+  max-width: 50%;
+  display: none;
+}
+
+.container .comment-section .title {
+  margin-block-start: 100px;
+  margin-block-end: 80px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.container .comment-section .comment {
+    display: block;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
+/* USER FORM */
+
+.user-form {
+	display: none;
+	margin-block-start: 100px;
+}
+
+.user-form .title {
+	margin-block-end: 80px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+/* Select styling */
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  z-index: 1;
+  outline: none;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+select::-ms-expand {
+  display: none;
+}
+
+.custom-select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+  min-width: 15ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+	width: 100%;
+	height: 40px;
+}
+
+.custom-select select, .custom-select::after {
+  grid-area: select;
+}
+
+.custom-select:not(.custom-select--multiple)::after {
+  content: "";
+  justify-self: end;
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+          clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select:focus + .focus {
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  right: -1px;
+  bottom: 0px;
+  border: 2px solid var(--select-focus);
+  border-radius: inherit;
+}
+
+/* INPUT STYLING */
+.container .user-form {
+	width: 50%;
+}
+
+.container .user-form label {
+	display: block;
+	padding-bottom: 5px;
+}
+
+.container .user-form .input-container {
+	border: 1px solid #52525f;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 20px;
+	margin-block-end: 20px;
+}
+
+.container .user-form .input-container input {
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	padding-block: 10px;
+	padding-inline: 20px;
+}
+select {
+	width: 100%!important;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.658);
+  color: black;
+  font-size: 24px;
+  font-weight: bolder;
+  /* TO DISABLE TEXT FROM BEING SELECTED */
+  -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    cursor: wait;
+  z-index: 99;
+  animation-name: loadingEffect;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+
+@keyframes loadingEffect {
+  0%   {color:rgba(0, 0, 0, 1); }
+  50%  {color:rgba(0, 0, 0, 0.1); }
+  100% {color:rgba(0, 0, 0, 1); }
+}
+
+.comment {
+  margin-block-end: 45px;
+}
+
+.domain-select {
+  margin-block-start: 10px;
+}
+
+.danger {
+  background-color: rgb(243, 78, 78);;
+  color: white;
+}
+.danger::-webkit-input-placeholder {
+  color: white;
+}
